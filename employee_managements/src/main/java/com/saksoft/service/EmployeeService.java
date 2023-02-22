@@ -1,6 +1,7 @@
 package com.saksoft.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.saksoft.model.Employee;
 
@@ -14,7 +15,7 @@ public interface EmployeeService {
 
 	Employee update(Integer eid);
 
-	Employee getsingleEmp(int eid);
+	Optional<Employee>  getsingleEmp(int eid);
 
 	
 

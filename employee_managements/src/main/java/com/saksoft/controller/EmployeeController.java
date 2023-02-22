@@ -1,6 +1,7 @@
 package com.saksoft.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,9 +39,9 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/singleemp/{eid}")
-	public ResponseEntity<Employee> getsingleemployee(@PathVariable int eid){
-		Employee empp=employeeservice.getsingleEmp(eid);
-		return new ResponseEntity<Employee>(empp,HttpStatus.OK);
+	public  ResponseEntity<Optional<Employee>> getsingleemployee(@PathVariable int eid){
+		Optional<Employee> empp=employeeservice.getsingleEmp(eid);
+		return new ResponseEntity<Optional<Employee>>(empp,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/deletedata/{eid}")

@@ -45,12 +45,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public Employee getsingleEmp(int eid) {
+	public Optional<Employee> getsingleEmp(int eid) {
 		
 		
-		employeerepository.findById(eid);
+		Optional<Employee> s=employeerepository.findById(eid);
 				
-				return null;
+				return s;
 	}
 	
 
