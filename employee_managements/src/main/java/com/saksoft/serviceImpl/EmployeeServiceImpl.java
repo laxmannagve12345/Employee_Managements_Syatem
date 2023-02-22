@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 import com.saksoft.model.Employee;
 import com.saksoft.repository.EmployeeRepository;
 import com.saksoft.service.EmployeeService;
+
+import lombok.extern.slf4j.Slf4j;
 @Service
+@Slf4j
 public class EmployeeServiceImpl implements EmployeeService{
 
 	@Autowired
@@ -24,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public List<Employee> getAllData() {
+		log.info("in serviceImpl");
 		List<Employee>a=employeerepository.findAll();
 		return a;
 	}
